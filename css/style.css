@@ -233,12 +233,103 @@ body {
   line-height: 1.4;
 }
 
-/* Responsif */
-@media only screen and (max-width: 768px) {
-  .project-item img {
-    height: 150px; /* gambar lebih pendek di hp */
+/* ==========================
+   RESPONSIVE UNTUK TABLET & LAPTOP KECIL
+   ========================== */
+@media (max-width: 992px) {
+
+  .foto-container {
+    padding-inline: 2rem;
+    gap: 2rem;
+  }
+
+  .skill-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .contact-wrapper {
+    gap: 2rem;
   }
 }
+
+/* ==========================
+   RESPONSIVE UNTUK MOBILE (HP)
+   ========================== */
+@media (max-width: 768px) {
+
+  /* Navbar jadi kolom */
+  .navbar {
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem 2rem;
+  }
+
+  .navbaritem {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .navbaritem a {
+    font-size: 0.9rem;
+  }
+
+  .navbaricon input {
+    width: 100%;
+  }
+
+  /* Foto + teks jadi vertikal */
+  .foto-container {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .foto-lonjong-kiri {
+    width: 200px;
+    height: 280px;
+  }
+
+  .sapaan-awal {
+    font-size: 2.2em;
+  }
+
+  .judul-atas {
+    font-size: 1.8em;
+  }
+
+  /* Skill grid lebih kecil di HP */
+  .skill-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .skill-item.all {
+    grid-column: span 1; /* biar nggak terlalu lebar */
+  }
+
+  /* Project grid HP */
+  .project-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.2rem;
+  }
+
+  /* Contact jadi 1 kolom */
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-right form {
+    width: 100%;
+    max-width: 350px;
+  }
+
+}
+
 
 .contact-section {
   background-color: #1A0F0F;
@@ -303,4 +394,19 @@ body {
 
 .contact-right button:hover {
   background-color: #0056b3; /* biru gelap saat hover */
+}
+/* ===== Footer Simple ===== */
+.footer-simple {
+  text-align: center;
+  background-color: #1A0F0F; /* sama seperti tema website */
+  padding: 1.5rem 0;
+  color: #d4d4d4;
+  font-size: 0.95rem;
+  border-top: 2px solid rgba(255,255,255,0.05);
+  margin-top: 3rem;
+}
+
+.footer-simple p {
+  margin: 0;
+  letter-spacing: 0.5px;
 }
