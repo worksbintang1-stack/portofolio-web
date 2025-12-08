@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- 
+      Mengatur encoding karakter ke UTF-8.
+      Ini penting agar seluruh karakter (termasuk huruf Indonesia) tampil normal.
+    -->
+    <meta charset="UTF-8" />
+
+    <!-- 
+      Viewport membuat website responsif di semua perangkat.
+      width=device-width → ukuran mengikuti lebar device
+      initial-scale=1.0 → zoom 100% saat pertama dibuka
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>my portofolio</title>
+
+    <!-- 
+      Feather Icons adalah library icon berbasis SVG.
+      Script ini mengimpor library-nya dari CDN.
+      Nanti ikon akan di-render pakai feather.replace() di bagian bawah.
+    -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!--
+      Menghubungkan file CSS utama.
+      Semua styling website ada di dalam css/style.css.
+    -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- 
+      Koneksi awal ke server Google Fonts agar pemanggilan font lebih cepat 
+      (preconnect → mengurangi loading font).
+    -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- 
+      Mengambil font "Imperial Script".
+      Font ini digunakan untuk logo atau teks kaligrafi.
+    -->
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap" rel="stylesheet">
+
+    <!-- 
+      Mengambil dua font sekaligus:
+      - Imperial Script
+      - Stack Sans Text (font modern, clean)
+      Digunakan untuk teks utama dan judul.
+    -->
+    <link href="https://fonts.googleapis.com/css2?family=Imperial+Script&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+    <!-- ===================== NAVBAR ===================== -->
+    <!-- 
+      NAVBAR berfungsi sebagai navigasi utama website.
+      Terdiri dari 3 elemen:
+      1. Logo nama pemilik website
+      2. Search bar + icon search
+      3. Menu navigasi: home, about, skill, portofolio
+    -->
+    <nav class="navbar">
+
+      <!-- Logo Website -->
+      <div class="logo">
+        <!-- 
+          Class "imperial-script-regular" digunakan agar font berubah 
+          sesuai font Google Imperial Script.
+        -->
+        <a class="imperial-script-regular" href="#">
+          Naufal Bintang <span>portofolio</span>
+        </a>
+      </div>
+
+      <!-- Search bar pada navbar -->
+      <div class="navbaricon">
+        <input type="text" placeholder="search" />
+        <!-- Feather icon akan otomatis diganti menjadi icon SVG -->
+        <i data-feather="search"></i>
+      </div>
+
+      <!-- Link navigasi -->
+      <div class="navbaritem">
+        <!-- 
+          Tautan ini seharusnya mengarah ke section tertentu.
+          Jika ingin bisa scrolling otomatis, gunakan href="#id_section".
+        -->
+        <a href="#">home</a>
+        <a href="#">about me</a>
+        <a href="#">my skill</a>
+        <a href="#">my portofolio</a>
+      </div>
+    </nav>
+
+    <!-- ===================== ABOUT ME ===================== -->
+    <!-- 
+      Bagian berisi: foto profil + teks penjelasan tentang diri.
+      Tata letak biasanya menggunakan flexbox (di CSS).
+    -->
+    <div class="foto-container">
+
+      <!-- Foto Profil -->
+      <img 
+        src="bintangganteng.jpg" 
+        alt="Foto Profil" 
+        class="foto-lonjong-kiri"
+      >
+
+      <!-- Container teks About Me -->
+      <div>
+        <!-- Sapaan awal -->
+        <h1 class="sapaan-awal">Hai I'M Naufalystar</h1>
+
+        <!-- Judul section -->
+        <h2 class="judul-atas">About Me</h2>
+
+        <!-- 
+          Link download foto.
+          Karena tidak ada teks atau tombol, link ini tidak kelihatan.
+        -->
+        <a href="bintangganteng.jpg" download="download coba"></a>
+
+        <!-- Paragraf deskripsi -->
+        <p class="tentang-diri">
+          Naufal Bintang adalah seorang pelajar SMK jurusan Rekayasa Perangkat Lunak (RPL).
+          Sejak SMP, ia sudah memiliki minat pada dunia teknologi dan pemrograman.
+        </p>
+
+        <p class="tentang-diri2">
+          Ia dikenal sebagai siswa kreatif, tekun, dan memiliki semangat belajar tinggi 
+          dalam mengembangkan kemampuan di bidang teknologi informasi.
+        </p>
+      </div>
+    </div>
+
+    <!-- ===================== SKILL SECTION ===================== -->
+    <section class="skill-section" id="myskill">
+      <div class="skill-container">
+
+        <!-- Judul Section Skill -->
+        <h2 class="skill-title">My Skill</h2>
+
+        <!-- 
+          skill-grid → biasanya pakai CSS Grid atau Flexbox.
+          item skill dibuat satu-satu sebagai <div>
+        -->
+        <div class="skill-grid">
+
+          <!-- Setiap skill dianggap satu item -->
+          <div class="skill-item">JavaScript</div>
+          <div class="skill-item">Python</div>
+          <div class="skill-item">Adobe Illustrator</div>
+          <div class="skill-item">React</div>
+          <div class="skill-item">C++</div>
+
+          <!-- Skill lucu/fun -->
+          <div class="skill-item all">Mobile Legend</div>
+
+          <div class="skill-item">PHP</div>
+          <div class="skill-item">typescript</div>
+          <div class="skill-item">in love</div>
+          <div class="skill-item">sholat on time</div>
+          <div class="skill-item">CSS</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PROJECT SECTION ===================== -->
+    <section class="project-section" id="myproject">
+      <div class="project-container">
+
+        <h2 class="project-title">My Project</h2>
+
+        <!-- Grid project -->
+        <div class="project-grid">
+
+          <!-- ===================== Project 1 ===================== -->
+          <div class="project-item">
+            <img src="img/project1.png" alt="UI Dashboard Project">
+
+            <!-- Judul project -->
+            <h3>Modern Dashboard UI</h3>
+
+            <!-- Deskripsi -->
+            <p>
+              Project desain antarmuka dashboard dengan tampilan minimalis dan intuitif.
+            </p>
+          </div>
+
+          <!-- ===================== Project 2 ===================== -->
+          <div class="project-item">
+            <img src="img/project2.png" alt="Mobile App Concept">
+            <h3>Mobile App Concept</h3>
+            <p>
+              Konsep UI/UX aplikasi mobile dengan tampilan interaktif dan user-friendly.
+            </p>
+          </div>
+
+          <!-- ===================== Project 3 ===================== -->
+          <div class="project-item">
+            <img src="img/project3.png" alt="E-Commerce UI">
+            <h3>E-Commerce UI</h3>
+            <p>
+              Desain halaman toko online modern dengan fokus pada pengalaman pengguna.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT FORM ===================== -->
+    <section class="contact-section" id="contact">
+
+      <h2 class="contact-title">CONTACT ME</h2>
+
+      <div class="contact-wrapper">
+
+        <!-- Bagian form -->
+        <div class="contact-right">
+
+          <!-- 
+            Form ini menggunakan Formspree.
+            Setiap pengunjung yang mengirim pesan akan dikirimkan ke email kamu.
+          -->
+          <form
+            action="https://formspree.io/f/xwpdpdzq"
+            method="POST"
+          >
+
+            <!-- Input Nama -->
+            <label>
+              Your name:
+              <input type="name" name="name">
+            </label>
+
+            <!-- Input Email -->
+            <label>
+              Your email:
+              <input type="email" name="email">
+            </label>
+
+            <!-- Pesan -->
+            <label>
+              Your message:
+              <textarea name="message"></textarea>
+            </label>
+
+            <!-- Tombol kirim -->
+            <button type="submit">Send</button>
+
+            <!-- Format data invisible -->
+            <input type="hidden" name="_format" id="plain">
+
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FEATHER ICON RENDER ===================== -->
+    <!-- 
+      feather.replace() berfungsi mengganti seluruh <i data-feather="">
+      menjadi icon SVG yang asli.
+    -->
+    <script>
+      feather.replace();
+    </script>
+
+  </body>
+</html>

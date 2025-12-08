@@ -1,0 +1,306 @@
+:root {
+  --warna-utama: rgb(221, 40, 27); /* warna merah utama untuk highlight */
+  --bg: #1A0F0F; /* warna background utama website */
+  --skill-bg: #2A1F1F; /* background area skill */
+  --skill-item-bg: #3A2F2F; /* warna kotak skill */
+  --skill-item-hover: #4A3F3F; /* warna saat skill di-hover */
+  --skill-all-bg: #D6281B; /* warna khusus skill ALL */
+}
+
+* {
+  margin: 0; /* hapus jarak luar default */
+  padding: 0; /* hapus padding default */
+  box-sizing: border-box; /* ukuran elemen termasuk border */
+}
+
+body {
+  font-family: "Bubblegum Sans", sans-serif; /* font utama */
+  background-color: var(--bg); /* background gelap */
+  color: #000000; /* warna teks default */
+}
+
+.navbar {
+  display: flex; /* membuat navbar sejajar horizontal */
+  justify-content: space-between; /* beri jarak kiri–kanan */
+  align-items: center; /* rata tengah vertikal */
+  padding: 1rem 7%; /* jarak dalam */
+  background-color: #1A0F0F; /* background navbar */
+  border-bottom: 3px solid black; /* garis bawah navbar */
+}
+
+.navbar .title {
+  font-family: Impe; /* memakai font khusus */
+}
+
+.navbar .logo a {
+  font-size: 2rem; /* ukuran font logo */
+  font-weight: 700; /* tebal */
+  color: #ffffff; /* warna putih */
+  text-decoration: none; /* hilangkan garis bawah */
+}
+
+.navbar .logo span {
+  color: #ffffff; /* warna putih untuk span */
+}
+
+.navbaricon {
+  display: flex; /* sejajar */
+  align-items: center; /* rata vertikal */
+  gap: 0.5rem; /* jarak antar elemen */
+}
+
+.navbaricon input {
+  padding: 0.5rem 1rem; /* jarak dalam input */
+  border: 1px solid rgb(7, 136, 196); /* warna border biru */
+  border-radius: 20px; /* sudut membulat */
+  background-color: #2A1F1F; /* background input */
+  color: white; /* warna teks */
+}
+
+.navbar .navbaritem a {
+  padding: 10px; /* jarak dalam link menu */
+  color: #c5d6d6; /* warna abu muda */
+  text-decoration: none; /* hilangkan underline */
+  transition: color 0.3s; /* animasi saat hover */
+}
+
+.navbar .navbaritem a:hover {
+  color: var(--warna-utama); /* berubah merah saat hover */
+}
+ 
+.imperial-script-regular {
+  font-family: "Imperial Script", cursive; /* font script */
+  font-weight: 400; 
+  font-style: normal;
+}
+
+.foto-lonjong-kiri {
+  width: 280px; /* lebar foto */
+  height: 400px; /* tinggi foto */
+  object-fit: cover; /* crop supaya pas */
+  clip-path: ellipse(50% 50% at 50% 50%); /* bentuk lonjong */
+  border: 3px solid var(--warna-utama); /* border merah */
+}
+
+.foto-container {
+  height: 100vh; /* tinggi layar penuh */
+  display: flex; /* sejajar kiri-kanan */
+  gap: 4rem; /* jarak antar elemen */
+  padding-inline: 4rem; /* padding kiri-kanan */
+  align-items: center; /* posisi tengah vertikal */
+}
+
+.judul-atas {
+  font-size: 2.5em; /* teks besar */
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  font-style: italic;
+  color: aliceblue; /* biru pucat */
+}
+
+.tentang-diri, .tentang-diri2 {
+  font-size: 1em;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  font-style: italic;
+  color: aliceblue;
+  max-width: 600px; /* biar teks tidak terlalu lebar */
+}
+
+.sapaan-awal {
+  font-size: 3em; /* ukuran besar */
+  font-weight: bold;
+  margin-bottom: 20px;
+  line-height: 1.2;
+  font-style: italic;
+  color: rgba(236, 0, 0, 0.329); /* merah transparan */
+}
+
+/* Skill Section */
+.skill-section {
+  padding: 4rem 7%; /* jarak dalam */
+  background-color: #1A0F0F; /* background gelap */
+}
+
+.skill-container {
+  max-width: 800px; /* lebar maksimal */
+  margin: 0 auto; /* center container */
+}
+
+.skill-title {
+  font-size: 2.5rem;
+  text-align: center; /* teks ditengah */
+  margin-bottom: 2rem;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase; /* huruf besar semua */
+  letter-spacing: 2px; /* jarak antar huruf */
+}
+
+.skill-grid {
+  display: grid; /* gunakan grid */
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* responsif */
+  gap: 1rem; /* jarak antar item */
+}
+
+.skill-item {
+  background-color: var(--skill-item-bg); /* warna kotak */
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 25px; /* sudut membulat */
+  text-align: center; /* teks tengah */
+  font-weight: bold;
+  transition: all 0.3s ease; /* animasi hover */
+  cursor: pointer;
+  border: 2px solid transparent; /* border default */
+}
+
+.skill-item:hover {
+  background-color: var(--skill-item-hover); /* warna hover */
+  transform: translateY(-5px); /* naik sedikit */
+  border-color: var(--warna-utama); /* border merah */
+  box-shadow: 0 5px 15px rgba(214, 40, 27, 0.3); /* bayangan */
+}
+
+.skill-item.all {
+  background-color: var(--skill-all-bg); /* merah cerah */
+  grid-column: span 2; /* kotak lebih lebar */
+}
+
+.skill-item.all:hover {
+  background-color: #E63946; /* merah lebih terang */
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(214, 40, 27, 0.5);
+}
+
+/* My Project Section */
+.project-section {
+  padding: 4rem 7%;
+  background-color:#1A0F0F;
+}
+
+.project-container {
+  max-width: 1000px; /* lebar container */
+  margin: 0 auto;
+}
+
+.project-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsif */
+  gap: 2rem;
+}
+
+.project-item {
+  background-color: var(--skill-item-bg); /* kotak project */
+  border-radius: 15px;
+  overflow: hidden; /* biar gambar tidak keluar kotak */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* animasi */
+}
+
+.project-item:hover {
+  transform: translateY(-5px); /* naik sedikit */
+  box-shadow: 0 8px 20px rgba(214, 40, 27, 0.4); /* bayangan */
+}
+
+.project-item img {
+  width: 100%; /* gambar penuh kotak */
+  height: 180px; /* tinggi tetap */
+  object-fit: cover; /* crop gambar */
+}
+
+.project-item h3 {
+  color: var(--warna-utama); /* judul merah */
+  font-size: 1.3rem;
+  margin: 1rem;
+}
+
+.project-item p {
+  color: #ddd; /* teks abu */
+  font-size: 0.9rem;
+  margin: 0 1rem 1rem;
+  line-height: 1.4;
+}
+
+/* Responsif */
+@media only screen and (max-width: 768px) {
+  .project-item img {
+    height: 150px; /* gambar lebih pendek di hp */
+  }
+}
+
+.contact-section {
+  background-color: #1A0F0F;
+  color: white;
+  padding: 4rem 7%;
+  font-family: Arial, sans-serif;
+}
+
+.contact-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.contact-wrapper {
+  display: flex;
+  justify-content: space-between; /* buat dua kolom */
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+.contact-right form {
+  width: 350px; /* lebar form */
+  padding: 20px;
+  background: #ffffff; /* putih */
+  border-radius: 10px; /* sudut membulat */
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08); /* bayangan halus */
+  font-family: Arial, sans-serif;
+}
+
+.contact-right form label {
+  display: block; /* label satu baris */
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-right form input,
+.contact-right form textarea {
+  width: 100%; /* penuh */
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.contact-right form textarea {
+  height: 120px;
+  resize: vertical; /* bisa diubah tinggi */
+}
+
+.contact-right button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff; /* biru */
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.contact-right button:hover {
+  background-color: #0056b3; /* biru gelap saat hover */
+}
