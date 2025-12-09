@@ -77,6 +77,18 @@ body {
   border: 3px solid var(--warna-utama);
 }
 
+.download-cv .button-container {
+  padding: 10px 20px;
+  background: rgb(201, 12, 12);
+  color: white;
+  border: none;
+  border-radius: 5px;
+ 
+ 
+
+}
+
+
 .sapaan-awal {
   font-size: 3em;
   font-weight: bold;
@@ -95,8 +107,7 @@ body {
   margin-bottom: 20px;
 }
 
-.tentang-diri,
-.tentang-diri2 {
+.tentang-diri {
   max-width: 600px;
   line-height: 1.5;
   margin-bottom: 20px;
